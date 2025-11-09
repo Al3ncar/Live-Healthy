@@ -940,8 +940,10 @@ footer .footer__copy p {
     width: 100%;
   }
   header .header__navgation nav > ul a > li {
-    width: 100%;
-    font-size: 2.5vw;
+    width: 24.8vw;
+    font-size: 3.6vw;
+    white-space: nowrap;
+    overflow: hidden;
   }
   header .header__content__title {
     display: flex;
@@ -1240,6 +1242,7 @@ footer .footer__copy p {
     text-align: center;
   }
   header .header__navgation nav ul a li {
+    width: 100%;
     font-size: 7vw;
   }
   header .header__content {
