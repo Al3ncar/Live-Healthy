@@ -1,0 +1,857 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 100%;
+  background-image: url("../assets/banner.jpg");
+  background-position: right 194.5%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 4.3% 0 11.5% 0;
+}
+header .header__navgation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0% 5% 6% 5%;
+  padding: 0.5% 1%;
+  border-radius: 2vw;
+  background: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
+}
+header .header__navgation--box {
+  margin-left: 3%;
+  width: 12.4%;
+}
+header .header__navgation--box img {
+  width: 100%;
+}
+header .header__navgation nav {
+  width: 65%;
+}
+header .header__navgation nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 56%;
+  list-style: none;
+}
+header .header__navgation nav ul a {
+  text-decoration: none;
+}
+header .header__navgation nav ul a li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+}
+header .header__navgation nav ul a li:hover {
+  text-decoration: underline;
+}
+header .header__content {
+  padding: 0 6%;
+}
+header .header__content__title h2 {
+  font-size: 3.3vw;
+  background-image: linear-gradient(to right, #1173d4, #33cc73);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 47%;
+}
+header .header__content__title p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8vw;
+  font-weight: 400;
+  width: 33%;
+  margin: 2.5% 0 4% 0;
+}
+header .header__content__btn .button-default {
+  font-family: "Inter", sans-serif;
+  font-size: 1vw;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  background-color: #1173d4;
+  padding: 1.5% 4%;
+  color: #fff;
+}
+header .header__content__btn .button-outline {
+  font-family: "Inter", sans-serif;
+  font-size: 1vw;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  border: solid 1px #1173d4;
+  padding: 1.5% 4%;
+  color: #1173d4;
+  background: transparent;
+  margin-left: 2%;
+}
+
+main .main__important {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5%;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+main .main__important h2 {
+  font-size: 3.3vw;
+  background-image: linear-gradient(to right, #1173d4, #33cc73);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .main__important--description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8vw;
+  font-weight: 400;
+  width: 76%;
+  margin: 3% 0;
+  font-size: 1.5vw;
+  text-align: center;
+}
+main .main__important--cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  flex-wrap: wrap;
+  width: 100%;
+}
+main .main__important--cards .card--default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28%;
+  padding: 0% 3%;
+  flex-direction: column;
+  background-color: #f9fafb;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 0.5vw;
+  margin: 0 2%;
+}
+main .main__important--cards .card--default img {
+  width: 23%;
+  margin: 2.5% 0 10% 0;
+}
+main .main__important--cards .card--default h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.7vw;
+  font-weight: 600;
+  font-size: 1.5vw;
+  margin-bottom: 10%;
+}
+main .main__important--cards .card--default p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8vw;
+  font-weight: 400;
+  margin-bottom: 8%;
+  text-align: center;
+  font-size: 1.2vw;
+}
+main .main__men, main .main__woman {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  flex-direction: column;
+  background-color: #fdefef;
+}
+main .main__men h2, main .main__woman h2 {
+  font-size: 3.3vw;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(90deg, rgba(249, 1, 111, 0.54) 0%, rgba(147, 8, 133, 0.619615) 41.83%, rgba(208, 56, 170, 0.754793) 70.19%, #851c87 100%);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3%;
+}
+main .main__men--cards, main .main__woman--cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 100%;
+  align-items: stretch;
+}
+main .main__men--cards .card--default, main .main__woman--cards .card--default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28%;
+  padding: 0% 3%;
+  flex-direction: column;
+  background-color: #f9fafb;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 0.5vw;
+  width: 29%;
+  margin-top: 7%;
+  margin: 3% 2%;
+  padding: 0 2% 6% 0%;
+  justify-content: flex-start;
+  box-shadow: 0px 2vh 1vw rgba(0, 0, 0, 0.2509803922);
+  border-radius: 1vw;
+}
+main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+  width: 23%;
+  margin: 2.5% 0 10% 0;
+}
+main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.7vw;
+  font-weight: 600;
+  font-size: 1.5vw;
+  margin-bottom: 10%;
+}
+main .main__men--cards .card--default p, main .main__woman--cards .card--default p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8vw;
+  font-weight: 400;
+  margin-bottom: 8%;
+  text-align: center;
+  font-size: 1.2vw;
+}
+main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+  margin-top: 9%;
+  width: 40%;
+}
+main .main__men--cards .card--default ul, main .main__woman--cards .card--default ul {
+  padding-left: 8%;
+}
+main .main__men--cards .card--default ul li, main .main__woman--cards .card--default ul li {
+  width: 100%;
+  margin: 4% 0;
+  font-size: 1.2vw;
+}
+main .main__men {
+  background-color: #f8f9fa;
+}
+main .main__men h2 {
+  font-size: 3.3vw;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(90deg, #3373d2 16.04%, #6f95c7 33.14%, #7bb5f5 54.51%, #0074ee 68.5%, #5ea7ef 87.02%);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .main__alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .main__alert h2 {
+  font-size: 3.3vw;
+  background-image: linear-gradient(to right, #1173d4, #33cc73);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 2% 0 5% 0;
+}
+main .main__alert--cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1124px) {
+  header {
+    background-position: 100% 110%;
+  }
+  header .header__navgation--box {
+    width: 15%;
+  }
+  header .header__navgation nav > ul {
+    width: 80%;
+  }
+  header .header__navgation nav > ul a > li {
+    width: 100%;
+    font-size: 1.8vw;
+  }
+  header .header__content__title h2 {
+    width: 60%;
+    font-size: 5vw;
+  }
+  header .header__content__title p {
+    width: 60%;
+    font-size: 3vw;
+  }
+  header .header__content__btn .button-default,
+  header .header__content__btn .button-outline {
+    font-size: 1.9vw;
+  }
+  main .main__important h2 {
+    font-size: 5vw;
+  }
+  main .main__important--description {
+    margin: 5% 0;
+    width: 100%;
+    font-size: 2vw;
+  }
+  main .main__important--cards {
+    width: 100%;
+  }
+  main .main__important--cards .card--default {
+    border-radius: 0.8vw;
+  }
+  main .main__important--cards .card--default img {
+    width: 23%;
+  }
+  main .main__important--cards .card--default h3 {
+    font-size: 2vw;
+  }
+  main .main__important--cards .card--default p {
+    font-size: 1.5vw;
+  }
+  main .main__men h2, main .main__woman h2 {
+    font-size: 4vw;
+  }
+  main .main__men--cards, main .main__woman--cards {
+    width: 90%;
+  }
+  main .main__men--cards .card--default, main .main__woman--cards .card--default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    padding: 0% 3%;
+    flex-direction: column;
+    background-color: #f9fafb;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
+    border-radius: 0.5vw;
+    width: 30%;
+    margin-top: 7%;
+    padding: 0 2% 6% 0%;
+    justify-content: flex-start;
+    border-radius: 1vw;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    width: 23%;
+    margin: 2.5% 0 10% 0;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.7vw;
+    font-weight: 600;
+    font-size: 1.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__men--cards .card--default p, main .main__woman--cards .card--default p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8vw;
+    font-weight: 400;
+    margin-bottom: 8%;
+    text-align: center;
+    font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    margin-top: 9%;
+    width: 40%;
+  }
+  main .main__men--cards .card--default ul, main .main__woman--cards .card--default ul {
+    padding-left: 8%;
+  }
+  main .main__men--cards .card--default ul li, main .main__woman--cards .card--default ul li {
+    width: 100%;
+    margin: 4% 0;
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 850px) {
+  header {
+    height: 100vh;
+    background-position: 100% 110%;
+  }
+  header .header__navgation--box {
+    width: 18%;
+  }
+  header .header__navgation nav > ul {
+    width: 80%;
+  }
+  header .header__navgation nav > ul a > li {
+    width: 100%;
+    font-size: 2vw;
+  }
+  header .header__content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 85%;
+  }
+  header .header__content__title h2 {
+    width: 80%;
+    font-size: 7vw;
+  }
+  header .header__content__title p {
+    width: 50%;
+    font-size: 3.8vw;
+  }
+  header .header__content__btn .button-default,
+  header .header__content__btn .button-outline {
+    font-size: 1.9vw;
+  }
+  header .header__content__btn .button-outline {
+    background-color: #fff;
+  }
+  main .main__important {
+    padding-top: 7%;
+    padding-bottom: 10%;
+  }
+  main .main__important h2 {
+    font-size: 6vw;
+    text-align: center;
+  }
+  main .main__important--description {
+    margin: 5% 0;
+    width: 100%;
+    font-size: 2.5vw;
+  }
+  main .main__important--cards {
+    width: 96%;
+  }
+  main .main__important--cards .card--default {
+    width: 46%;
+    border-radius: 1.2vw;
+    margin: 0 2%;
+  }
+  main .main__important--cards .card--default img {
+    width: 23%;
+  }
+  main .main__important--cards .card--default h3 {
+    font-size: 2.6vw;
+  }
+  main .main__important--cards .card--default p {
+    font-size: 2.6vw;
+  }
+  main .main__important--cards .card--default:nth-child(3) {
+    width: 100%;
+    margin-top: 4%;
+  }
+  main .main__important--cards .card--default:nth-child(3) img {
+    width: 10%;
+    margin: 2.5% 0 2% 0;
+  }
+  main .main__important--cards .card--default:nth-child(3) h3 {
+    font-size: 3vw;
+    margin-bottom: 3%;
+  }
+  main .main__important--cards .card--default:nth-child(3) p {
+    font-size: 3vw;
+    margin-bottom: 6%;
+  }
+  main .main__men h2, main .main__woman h2 {
+    font-size: 5vw;
+  }
+  main .main__men--cards, main .main__woman--cards {
+    width: 90%;
+  }
+  main .main__men--cards .card--default, main .main__woman--cards .card--default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    padding: 0% 3%;
+    flex-direction: column;
+    background-color: #f9fafb;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
+    border-radius: 0.5vw;
+    width: 46%;
+    margin-top: 7%;
+    padding: 0 2% 6% 0%;
+    justify-content: flex-start;
+    border-radius: 2vw;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    width: 23%;
+    margin: 2.5% 0 10% 0;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.7vw;
+    font-weight: 600;
+    font-size: 1.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__men--cards .card--default p, main .main__woman--cards .card--default p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8vw;
+    font-weight: 400;
+    margin-bottom: 8%;
+    text-align: center;
+    font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    margin-top: 9%;
+    width: 40%;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-size: 3vw;
+  }
+  main .main__men--cards .card--default ul, main .main__woman--cards .card--default ul {
+    padding-left: 8%;
+  }
+  main .main__men--cards .card--default ul li, main .main__woman--cards .card--default ul li {
+    width: 100%;
+    margin: 4% 0;
+    font-size: 2vw;
+  }
+}
+@media (max-width: 550px) {
+  header {
+    background-image: none;
+  }
+  header .header {
+    height: 100%;
+  }
+  header .header__navgation {
+    border-radius: 5vw;
+  }
+  header .header__navgation--box {
+    width: 30%;
+  }
+  header .header__navgation nav > ul {
+    width: 100%;
+  }
+  header .header__navgation nav > ul a > li {
+    width: 100%;
+    font-size: 2.5vw;
+  }
+  header .header__content__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    margin-top: 10vh;
+    flex-direction: column;
+  }
+  header .header__content__title h2 {
+    text-align: center;
+    width: 95%;
+    font-size: 11vw;
+  }
+  header .header__content__title p {
+    width: 87%;
+    text-align: center;
+    font-size: 6vw;
+  }
+  header .header__content__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+  }
+  header .header__content__btn .button-default,
+  header .header__content__btn .button-outline {
+    padding: 5% 2%;
+    border-radius: 2vw;
+    font-size: 3.5vw;
+  }
+  main .main__important {
+    padding-top: 7%;
+    padding-bottom: 15%;
+  }
+  main .main__important h2 {
+    width: 90%;
+    font-size: 6.7vw;
+    text-align: center;
+  }
+  main .main__important--description {
+    margin: 5% 0;
+    width: 100%;
+    font-size: 3.8vw;
+  }
+  main .main__important--cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .main__important--cards .card--default {
+    width: 75%;
+    margin-top: 12%;
+    border-radius: 1.8vw;
+  }
+  main .main__important--cards .card--default img {
+    width: 18%;
+    margin: 4.5% 0 5% 0;
+  }
+  main .main__important--cards .card--default h3 {
+    font-size: 4.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__important--cards .card--default p {
+    width: 80%;
+    font-size: 3.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__important--cards .card--default:last-child {
+    width: 75%;
+    margin-top: 12%;
+    border-radius: 1.8vw;
+  }
+  main .main__important--cards .card--default:last-child img {
+    width: 18%;
+    margin: 4.5% 0 5% 0;
+  }
+  main .main__important--cards .card--default:last-child h3 {
+    font-size: 4.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__important--cards .card--default:last-child p {
+    width: 80%;
+    font-size: 3.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__men, main .main__woman {
+    padding: 5% 5% 12% 5%;
+  }
+  main .main__men h2, main .main__woman h2 {
+    font-size: 8vw;
+    padding: 15% 0 4% 0;
+  }
+  main .main__men--cards, main .main__woman--cards {
+    width: 90%;
+    justify-content: center;
+  }
+  main .main__men--cards .card--default, main .main__woman--cards .card--default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    padding: 0% 3%;
+    flex-direction: column;
+    background-color: #f9fafb;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
+    border-radius: 0.5vw;
+    width: 70%;
+    border-radius: 3vw;
+    padding: 0 2% 15% 0%;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    width: 23%;
+    margin: 2.5% 0 10% 0;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.7vw;
+    font-weight: 600;
+    font-size: 1.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__men--cards .card--default p, main .main__woman--cards .card--default p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8vw;
+    font-weight: 400;
+    margin-bottom: 8%;
+    text-align: center;
+    font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    margin-top: 9%;
+    width: 40%;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-size: 5vw;
+  }
+  main .main__men--cards .card--default ul, main .main__woman--cards .card--default ul {
+    padding-left: 8%;
+  }
+  main .main__men--cards .card--default ul li, main .main__woman--cards .card--default ul li {
+    width: 100%;
+    margin: 4% 0;
+    font-size: 3vw;
+  }
+}
+@media (max-width: 300px) {
+  header {
+    height: auto;
+    background-image: none;
+  }
+  header .header__navgation {
+    flex-direction: column;
+  }
+  header .header__navgation--box {
+    width: 80%;
+    border-bottom: solid 0.4px #fff;
+  }
+  header .header__navgation nav {
+    width: 100%;
+  }
+  header .header__navgation nav ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  header .header__navgation nav ul a {
+    width: 100%;
+    padding: 5.4% 0;
+    text-align: center;
+  }
+  header .header__navgation nav ul a li {
+    font-size: 7vw;
+  }
+  header .header__content {
+    height: 100%;
+  }
+  header .header__content__title h2 {
+    width: 100%;
+    font-size: 10vw;
+    margin-bottom: 10vh;
+  }
+  header .header__content__title p {
+    width: 100%;
+    margin-bottom: 6vh;
+    font-size: 7vw;
+  }
+  header .header__content__btn {
+    flex-direction: column;
+  }
+  header .header__content__btn .button-default,
+  header .header__content__btn .button-outline {
+    width: 100%;
+    padding: 5% 4%;
+    margin-bottom: 4vh;
+    border-radius: 3vw;
+    font-size: 6vw;
+  }
+  header .header__content__btn .button-outline {
+    margin-left: 0;
+  }
+  main .main__important {
+    padding-top: 12vh;
+    padding-bottom: 15vh;
+  }
+  main .main__important h2 {
+    width: 100%;
+    font-size: 10vw;
+    text-align: center;
+  }
+  main .main__important--description {
+    margin: 3vh 0 5vh 0;
+    width: 100%;
+    font-size: 7vw;
+  }
+  main .main__important--cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .main__important--cards .card--default {
+    width: 100%;
+    margin-top: 12%;
+    border-radius: 5vw;
+  }
+  main .main__important--cards .card--default img {
+    width: 18%;
+    margin: 4.5% 0 5% 0;
+  }
+  main .main__important--cards .card--default h3 {
+    font-size: 7vw;
+    margin-bottom: 10%;
+  }
+  main .main__important--cards .card--default p {
+    width: 100%;
+    font-size: 6vw;
+    margin-bottom: 10vh;
+  }
+  main .main__important--cards .card--default:last-child {
+    width: 100%;
+    margin-top: 12%;
+    border-radius: 1.8vw;
+  }
+  main .main__important--cards .card--default:last-child img {
+    width: 18%;
+    margin: 4.5% 0 5% 0;
+  }
+  main .main__important--cards .card--default:last-child h3 {
+    font-size: 7vw;
+    margin-bottom: 10%;
+  }
+  main .main__important--cards .card--default:last-child p {
+    width: 100%;
+    font-size: 6vw;
+    margin-bottom: 10%;
+  }
+  main .main__men, main .main__woman {
+    padding: 5% 5% 12% 5%;
+  }
+  main .main__men h2, main .main__woman h2 {
+    font-size: 12vw;
+    text-align: center;
+  }
+  main .main__men--cards, main .main__woman--cards {
+    width: 100%;
+    justify-content: center;
+  }
+  main .main__men--cards .card--default, main .main__woman--cards .card--default {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28%;
+    padding: 0% 3%;
+    flex-direction: column;
+    background-color: #f9fafb;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
+    border-radius: 0.5vw;
+    width: 90%;
+    border-radius: 3vw;
+    padding: 0 2% 15% 0%;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    width: 23%;
+    margin: 2.5% 0 10% 0;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.7vw;
+    font-weight: 600;
+    font-size: 1.5vw;
+    margin-bottom: 10%;
+  }
+  main .main__men--cards .card--default p, main .main__woman--cards .card--default p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8vw;
+    font-weight: 400;
+    margin-bottom: 8%;
+    text-align: center;
+    font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
+    margin-top: 9%;
+    width: 50%;
+  }
+  main .main__men--cards .card--default h3, main .main__woman--cards .card--default h3 {
+    font-size: 8.5vw;
+    text-align: center;
+  }
+  main .main__men--cards .card--default ul, main .main__woman--cards .card--default ul {
+    padding-left: 8%;
+  }
+  main .main__men--cards .card--default ul li, main .main__woman--cards .card--default ul li {
+    width: 100%;
+    margin: 4% 0;
+    font-size: 4vw;
+  }
+}/*# sourceMappingURL=style.css.map */
