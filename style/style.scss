@@ -2,6 +2,7 @@
 
 $font-roboto: "Roboto", sans-serif;
 $size-roboto-regular: 1.2vw;
+$size-roboto-bold: 1.4vw;
 
 $font-inter: "Inter", sans-serif;
 $size-inter-title: 3.3vw;
@@ -13,6 +14,16 @@ $bg-card: #f9fafb;
 $bg-woman: #fdefef;
 $bg-important: #f8f9fa;
 $bg-gradient-primary: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
+
+$bg-card-breasts: #f9d5e5;
+$bg-card-testíc: #cfe2f3;
+$bg-card-day: #d4edda;
+$bg-card-mint: #ffe9c2;
+
+$color-card-breasts: #ad346a;
+$color-card-testíc: #2769a3;
+$color-card-day: #244a2d;
+$color-card-mint: #976c00;
 
 @mixin flex-around {
   display: flex;
@@ -36,6 +47,11 @@ $bg-gradient-primary: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
   font-family: $font-roboto;
   font-size: $size-roboto-regular;
   font-weight: 400;
+}
+@mixin roboto-bold {
+  font-family: $font-roboto;
+  font-size: $size-roboto-bold;
+  font-weight: 700;
 }
 
 @mixin inter-regular {
@@ -121,6 +137,10 @@ $bg-gradient-primary: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
   width: 90%;
   height: 100%;
   flex-wrap: wrap;
+}
+
+@mixin card-lightpink {
+  background-color: $bg-card-breasts;
 }
 
 @mixin card-default {
@@ -328,8 +348,71 @@ main {
         margin: 2% 0 5% 0;
       }
 
+      @mixin card-lightpink {
+      }
+
       &--cards {
-        @include flex-center;
+        @include flex-between;
+        width: 72%;
+        flex-wrap: wrap;
+
+        $card-bg: (
+          "lightpink": $bg-card-breasts,
+          "lightblue": $bg-card-testíc,
+          "lightgreen": $bg-card-day,
+          "lightyellow": $bg-card-mint,
+        );
+        $card-colors: (
+          "lightpink": $color-card-breasts,
+          "lightblue": $color-card-testíc,
+          "lightgreen": $color-card-day,
+          "lightyellow": $color-card-mint,
+        );
+
+        @each $index, $color in $card-colors {
+          .card--default--#{$index} {
+            &__title {
+              @include roboto-bold;
+              color: $color;
+            }
+            p {
+              @include roboto-regular;
+              width: 100%;
+              text-align: center;
+              color: $color;
+            }
+          }
+        }
+        @each $index, $color in $card-bg {
+          .card--default--#{$index} {
+            width: 45%;
+            margin: 1%;
+            padding: 2%;
+            background-color: $color;
+            border-radius: 0.5vw;
+
+            &__title {
+              display: flex;
+              align-items: center;
+              margin-bottom: 3%;
+
+              img {
+                width: 8%;
+                margin: 0 1% 1% 3%;
+              }
+            }
+          }
+        }
+
+        .card--default--lightpink {
+          padding: 2% 3%;
+        }
+        .card--default--lightblue {
+          padding: 2% 1%;
+        }
+        .card--default--lightyellow {
+          padding: 2% 4%;
+        }
       }
     }
   }
@@ -440,6 +523,32 @@ main {
                 width: 100%;
                 margin: 4% 0;
                 font-size: 1.5vw;
+              }
+            }
+          }
+        }
+      }
+
+      &__alert {
+        &--cards {
+          width: 85%;
+          $card-bg: (
+            "lightpink": $bg-card-breasts,
+            "lightblue": $bg-card-testíc,
+            "lightgreen": $bg-card-day,
+            "lightyellow": $bg-card-mint,
+          );
+
+          @each $index, $color in $card-bg {
+            .card--default--#{$index} {
+              &__title {
+                h3 {
+                  font-size: 2vw;
+                }
+              }
+
+              p {
+                font-size: 1.4vw;
               }
             }
           }
@@ -592,6 +701,34 @@ main {
                 width: 100%;
                 margin: 4% 0;
                 font-size: 2vw;
+              }
+            }
+          }
+        }
+      }
+
+      &__alert {
+        &--cards {
+          width: 95%;
+          $card-bg: (
+            "lightpink": $bg-card-breasts,
+            "lightblue": $bg-card-testíc,
+            "lightgreen": $bg-card-day,
+            "lightyellow": $bg-card-mint,
+          );
+
+          @each $index, $color in $card-bg {
+            .card--default--#{$index} {
+              width: 48%;
+              &__title {
+                h3 {
+                  font-size: 2.5vw;
+                }
+              }
+
+              p {
+                width: 100%;
+                font-size: 1.7vw;
               }
             }
           }
@@ -759,6 +896,48 @@ main {
                 margin: 4% 0;
                 font-size: 3vw;
               }
+            }
+          }
+        }
+      }
+
+      &__alert {
+        h2 {
+          font-size: 4.5vw;
+        }
+        &--cards {
+          width: 98%;
+          justify-content: center;
+          $card-bg: (
+            "lightpink": $bg-card-breasts,
+            "lightblue": $bg-card-testíc,
+            "lightgreen": $bg-card-day,
+            "lightyellow": $bg-card-mint,
+          );
+
+          @each $index, $color in $card-bg {
+            .card--default--#{$index} {
+              width: 95%;
+              padding: 4% 5% 3% 5%;
+              &__title {
+                h3 {
+                  font-size: 4.5vw;
+                }
+              }
+
+              p {
+                width: 100%;
+                font-size: 3.9vw;
+              }
+            }
+          }
+
+          .card--default--lightgreen {
+            justify-content: center;
+            align-items: center;
+            p {
+              width: 80 %;
+              padding: 0% 2% 1% 2%;
             }
           }
         }
@@ -936,6 +1115,54 @@ main {
                 margin: 4% 0;
                 font-size: 4vw;
               }
+            }
+          }
+        }
+      }
+
+      &__alert {
+        h2 {
+          font-size: 9.5vw;
+          margin: 5% 0;
+        }
+        &--cards {
+          width: 98%;
+          justify-content: center;
+          $card-bg: (
+            "lightpink": $bg-card-breasts,
+            "lightblue": $bg-card-testíc,
+            "lightgreen": $bg-card-day,
+            "lightyellow": $bg-card-mint,
+          );
+
+          @each $index, $color in $card-bg {
+            .card--default--#{$index} {
+              width: 100%;
+              margin: 2vh 2vw;
+              padding: 4% 5% 3% 5%;
+              &__title {
+                flex-direction: column;
+                img {
+                  width: 20%;
+                }
+                h3 {
+                  font-size: 7.5vw;
+                }
+              }
+
+              p {
+                width: 100%;
+                font-size: 5.9vw;
+              }
+            }
+          }
+
+          .card--default--lightgreen {
+            justify-content: center;
+            align-items: center;
+            p {
+              width: 80 %;
+              padding: 0% 2% 1% 2%;
             }
           }
         }
