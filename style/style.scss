@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font-poppins: "Poppins", sans-serif;
+$size-poppins-regular: 1vw;
+$size-poppins-bold: 1vw;
 
 $font-roboto: "Roboto", sans-serif;
 $size-roboto-regular: 1.2vw;
@@ -13,7 +17,8 @@ $size-inter-semibold: 1.7vw;
 $bg-card: #f9fafb;
 $bg-woman: #fdefef;
 $bg-important: #f8f9fa;
-$bg-gradient-primary: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
+$bg-footer: #313461;
+$bg-navigation: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
 
 $bg-card-breasts: #f9d5e5;
 $bg-card-testíc: #cfe2f3;
@@ -68,6 +73,17 @@ $color-card-mint: #976c00;
   font-family: $font-inter;
   font-size: $size-inter-semibold;
   font-weight: 600;
+}
+
+@mixin poppins-regular {
+  font-family: $font-poppins;
+  font-size: $size-poppins-regular;
+  font-weight: 400;
+}
+@mixin poppins-bold {
+  font-family: $font-poppins;
+  font-size: $size-poppins-bold;
+  font-weight: 700;
 }
 
 @mixin inter-title {
@@ -178,6 +194,9 @@ $color-card-mint: #976c00;
   font-family: $font-roboto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 header {
   width: 100%;
   background-image: url("../assets/banner.jpg");
@@ -192,7 +211,7 @@ header {
       margin: 0% 5% 6% 5%;
       padding: 0.5% 1%;
       border-radius: 2vw;
-      background: $bg-gradient-primary;
+      background: $bg-navigation;
 
       &--box {
         margin-left: 3%;
@@ -343,6 +362,7 @@ main {
     &__alert {
       @include flex-center;
       flex-direction: column;
+      padding-bottom: 5%;
       h2 {
         @include inter-title;
         margin: 2% 0 5% 0;
@@ -413,6 +433,106 @@ main {
         .card--default--lightyellow {
           padding: 2% 4%;
         }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $bg-footer;
+  .footer {
+    &__content {
+      width: 100%;
+      @include flex-between;
+      align-items: flex-start;
+      color: #fff;
+      padding: 3% 2%;
+
+      &__logo {
+        width: 45%;
+        img {
+          width: 40%;
+        }
+
+        .footer__title {
+          @include poppins-bold;
+          margin: 3% 0 2% 0;
+        }
+        p {
+          @include poppins-regular;
+          width: 75%;
+        }
+      }
+
+      &__nav {
+        width: 25%;
+        h2 {
+          @include poppins-bold;
+          font-size: 1.2vw;
+        }
+
+        ul {
+          margin-top: 6%;
+          list-style: none;
+          a {
+            text-decoration: none;
+            color: #fff;
+            li {
+              @include poppins-regular;
+              font-size: 0.9vw;
+              margin: 5% 0;
+            }
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      &__conctact {
+        width: 25%;
+
+        h2 {
+          @include poppins-bold;
+          font-size: 1.2vw;
+          // margin-bottom: 5%;
+        }
+
+        ul {
+          padding: 4% 0;
+          list-style: none;
+          // gap: 10%;
+
+          li {
+            @include poppins-regular;
+            font-size: 0.9vw;
+            margin: 2% 0;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          @include poppins-regular;
+          font-size: 0.9vw;
+          margin-top: 7%;
+          width: 80%;
+        }
+      }
+    }
+
+    &__copy {
+      width: 100%;
+      padding: 2%;
+      border-top: 0.1vh solid #9fabbc;
+      p {
+        @include poppins-regular;
+        text-align: center;
+        width: 100%;
+        color: #fff;
       }
     }
   }
@@ -556,11 +676,74 @@ main {
       }
     }
   }
+
+  footer {
+    .footer {
+      &__content {
+        &__logo {
+          width: 30%;
+          img {
+            width: 50%;
+          }
+
+          .footer__title {
+            font-size: 1.6vw;
+          }
+          p {
+            font-size: 1.4vw;
+          }
+        }
+
+        &__nav {
+          h2 {
+            font-size: 1.6vw;
+          }
+
+          ul {
+            a {
+              li {
+                font-size: 1.3vw;
+              }
+            }
+          }
+        }
+
+        &__conctact {
+          width: 25%;
+
+          h2 {
+            font-size: 1.7vw;
+          }
+
+          ul {
+            li {
+              @include poppins-regular;
+              font-size: 1.4vw;
+              margin: 2% 0;
+            }
+          }
+
+          p {
+            @include poppins-regular;
+            font-size: 1.5vw;
+            margin-top: 3%;
+            width: 95%;
+          }
+        }
+      }
+
+      &__copy {
+        p {
+          font-size: 1.5vw;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 850px) {
   header {
-    height: 100vh;
-    background-position: 100% 110%;
+    // height: 80vh;
+    background-position: 85% 110%;
 
     .header {
       &__navgation {
@@ -586,13 +769,13 @@ main {
 
         &__title {
           h2 {
-            width: 80%;
-            font-size: 7vw;
+            width: 75%;
+            font-size: 6vw;
           }
 
           p {
             width: 50%;
-            font-size: 3.8vw;
+            font-size: 2.5vw;
           }
         }
 
@@ -617,14 +800,14 @@ main {
         padding-bottom: 10%;
 
         h2 {
-          font-size: 6vw;
+          font-size: 4vw;
           text-align: center;
         }
 
         &--description {
           margin: 5% 0;
           width: 100%;
-          font-size: 2.5vw;
+          font-size: 1.9vw;
         }
 
         &--cards {
@@ -640,11 +823,11 @@ main {
             }
 
             h3 {
-              font-size: 2.6vw;
+              font-size: 2.4vw;
             }
 
             p {
-              font-size: 2.6vw;
+              font-size: 2vw;
             }
             &:nth-child(3) {
               width: 100%;
@@ -655,12 +838,12 @@ main {
               }
 
               h3 {
-                font-size: 3vw;
+                font-size: 2.4vw;
                 margin-bottom: 3%;
               }
 
               p {
-                font-size: 3vw;
+                font-size: 2vw;
                 margin-bottom: 6%;
               }
             }
@@ -720,6 +903,7 @@ main {
           @each $index, $color in $card-bg {
             .card--default--#{$index} {
               width: 48%;
+              border-radius: 1.6vw;
               &__title {
                 h3 {
                   font-size: 2.5vw;
@@ -732,6 +916,77 @@ main {
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer {
+      &__content {
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &__logo {
+          @include flex-center;
+          width: 90%;
+          padding: 3% 0 5% 0;
+          flex-direction: column;
+
+          img {
+            width: 30%;
+          }
+
+          .footer__title {
+            text-align: center;
+            font-size: 2.5vw;
+          }
+          p {
+            text-align: center;
+            font-size: 2vw;
+          }
+        }
+
+        &__nav {
+          width: 45%;
+          h2 {
+            font-size: 2.6vw;
+          }
+
+          ul {
+            a {
+              li {
+                font-size: 1.8vw;
+              }
+            }
+          }
+        }
+
+        &__conctact {
+          width: 45%;
+
+          h2 {
+            font-size: 2.7vw;
+          }
+
+          ul {
+            li {
+              @include poppins-regular;
+              font-size: 1.8vw;
+              margin: 2% 0;
+            }
+          }
+
+          p {
+            @include poppins-regular;
+            font-size: 1.8vw;
+          }
+        }
+      }
+
+      &__copy {
+        p {
+          font-size: 1.8vw;
         }
       }
     }
@@ -936,10 +1191,91 @@ main {
             justify-content: center;
             align-items: center;
             p {
-              width: 80 %;
+              width: 80%;
               padding: 0% 2% 1% 2%;
             }
           }
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer {
+      &__content {
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &__logo {
+          img {
+            width: 40%;
+          }
+
+          .footer__title {
+            // text-align: center;
+            font-size: 3.5vw;
+          }
+          p {
+            font-size: 3.5vw;
+          }
+        }
+
+        &__nav {
+          @include flex-center;
+          flex-direction: column;
+          width: 90%;
+          margin: 3% 0 7% 0;
+
+          h2 {
+            font-size: 3.5vw;
+          }
+
+          ul {
+            margin-top: 2%;
+            a {
+              li {
+                margin: 3% 0;
+                text-align: center;
+                font-size: 2.8vw;
+              }
+            }
+          }
+        }
+
+        &__conctact {
+          @include flex-center;
+          flex-direction: column;
+
+          width: 90%;
+
+          h2 {
+            font-size: 3.5vw;
+          }
+
+          ul {
+            padding: 2% 0 4% 0;
+            li {
+              font-size: 2.8vw;
+              margin: 2% 0;
+            }
+          }
+
+          p {
+            width: 70%;
+            text-align: center;
+            font-size: 2.8vw;
+            margin-bottom: 5%;
+          }
+        }
+      }
+
+      &__copy {
+        @include flex-center;
+        padding: 5% 0;
+
+        p {
+          width: 60%;
+          font-size: 2.8vw;
         }
       }
     }
@@ -1087,7 +1423,6 @@ main {
         h2 {
           font-size: 12vw;
           text-align: center;
-          // padding: 15% 0 4% 0;
         }
 
         &--cards {
@@ -1110,10 +1445,11 @@ main {
             }
             ul {
               padding-left: 8%;
+              list-style: none;
               li {
                 width: 100%;
                 margin: 4% 0;
-                font-size: 4vw;
+                font-size: 5vw;
               }
             }
           }
@@ -1161,10 +1497,85 @@ main {
             justify-content: center;
             align-items: center;
             p {
-              width: 80 %;
+              width: 80%;
               padding: 0% 2% 1% 2%;
             }
           }
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer {
+      &__content {
+        &__logo {
+          img {
+            width: 80%;
+          }
+
+          .footer__title {
+            font-size: 7.5vw;
+          }
+          p {
+            width: 100%;
+            font-size: 5.5vw;
+          }
+        }
+
+        &__nav {
+          margin: 9% 0 7% 0;
+
+          h2 {
+            font-size: 7.5vw;
+          }
+
+          ul {
+            margin-top: 2%;
+            a {
+              li {
+                margin: 3% 0;
+                text-align: center;
+                font-size: 5.8vw;
+              }
+            }
+          }
+        }
+
+        &__conctact {
+          @include flex-center;
+          flex-direction: column;
+
+          width: 90%;
+
+          h2 {
+            font-size: 7.5vw;
+          }
+
+          ul {
+            padding: 7% 0 8% 0;
+            li {
+              font-size: 5.8vw;
+              margin: 2% 0;
+            }
+          }
+
+          p {
+            width: 95%;
+            text-align: center;
+            font-size: 6.8vw;
+            margin-bottom: 5%;
+          }
+        }
+      }
+
+      &__copy {
+        @include flex-center;
+        padding: 5% 0;
+
+        p {
+          width: 60%;
+          font-size: 4.8vw;
         }
       }
     }
