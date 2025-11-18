@@ -1,4 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@keyframes StartTitle {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes seeNavigation {
+  0% {
+    transform: translateY(90%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes seeBtn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes blurTitles {
+  0% {
+    filter: blur(50px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+@keyframes card-man {
+  0% {
+    text-shadow: 0px 0px 0.5vw #0074ee;
+  }
+  22% {
+    text-shadow: 0px 0px 0.5vw #3400ee;
+  }
+  44% {
+    text-shadow: 0px 0px 0.5vw #00beee;
+  }
+  66% {
+    text-shadow: 0px 0px 0.5vw #001aff;
+  }
+  88% {
+    text-shadow: 0px 0px 0.5vw #2b02f4;
+  }
+  100% {
+    text-shadow: 0px 0px 0.5vw #0074ee;
+  }
+}
+@keyframes card-woman {
+  0% {
+    text-shadow: 0px 0px 0.5vw #de00ee;
+  }
+  22% {
+    text-shadow: 0px 0px 0.5vw #9f00ee;
+  }
+  44% {
+    text-shadow: 0px 0px 0.5vw #ee007b;
+  }
+  66% {
+    text-shadow: 0px 0px 0.5vw #ff0066;
+  }
+  88% {
+    text-shadow: 0px 0px 0.5vw #e402f4;
+  }
+  100% {
+    text-shadow: 0px 0px 0.5vw #ce00ee;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -26,13 +104,20 @@ header .header__navgation {
   padding: 0.5% 1%;
   border-radius: 2vw;
   background: linear-gradient(90deg, #4247a2 0%, #52b095 100%);
+  animation: seeNavigation 1s ease-in-out forwards;
 }
 header .header__navgation--box {
   margin-left: 3%;
   width: 12.4%;
+  transition: 0.8s;
 }
 header .header__navgation--box img {
   width: 100%;
+}
+header .header__navgation--box:hover {
+  transform: scale(1.1);
+  transition: 0.8s;
+  cursor: pointer;
 }
 header .header__navgation nav {
   width: 55%;
@@ -61,6 +146,9 @@ header .header__content {
   padding: 0 6%;
 }
 header .header__content__title h2 {
+  animation: blurTitles linear;
+  animation-timeline: view();
+  animation-range: entry cover 30%;
   font-size: 3.3vw;
   background-image: linear-gradient(to right, #1173d4, #33cc73);
   background-clip: text;
@@ -68,6 +156,7 @@ header .header__content__title h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 47%;
+  animation: StartTitle 0.8s ease-in forwards;
 }
 header .header__content__title p {
   font-family: "Inter", sans-serif;
@@ -75,6 +164,7 @@ header .header__content__title p {
   font-weight: 400;
   width: 33%;
   margin: 2.5% 0 4% 0;
+  animation: StartTitle 1s ease-in forwards;
 }
 header .header__content__btn .button-default {
   font-family: "Inter", sans-serif;
@@ -86,6 +176,12 @@ header .header__content__btn .button-default {
   background-color: #1173d4;
   padding: 1.5% 4%;
   color: #fff;
+  transition: 0.5s;
+}
+header .header__content__btn .button-default:hover {
+  background-color: #347fca;
+  transform: translateY(-10%);
+  transition: 0.5s;
 }
 header .header__content__btn .button-outline {
   font-family: "Inter", sans-serif;
@@ -98,7 +194,13 @@ header .header__content__btn .button-outline {
   padding: 1.5% 4%;
   color: #1173d4;
   background: transparent;
+  transition: 0.5s;
   margin-left: 2%;
+}
+header .header__content__btn .button-outline:hover {
+  background-color: rgba(52, 127, 202, 0.0549019608);
+  transform: translateY(-10%);
+  transition: 0.5s;
 }
 
 main .main__important {
@@ -111,6 +213,9 @@ main .main__important {
   background-color: #f8f9fa;
 }
 main .main__important h2 {
+  animation: blurTitles linear;
+  animation-timeline: view();
+  animation-range: entry cover 30%;
   font-size: 3.3vw;
   background-image: linear-gradient(to right, #1173d4, #33cc73);
   background-clip: text;
@@ -146,6 +251,8 @@ main .main__important--cards .card--default {
   background-color: #f9fafb;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 0.5vw;
+  transition: 0.5s;
+  cursor: pointer;
   margin: 0 2%;
 }
 main .main__important--cards .card--default img {
@@ -167,6 +274,9 @@ main .main__important--cards .card--default p {
   text-align: center;
   font-size: 1.2vw;
 }
+main .main__important--cards .card--default:hover {
+  transform: scale(1.05);
+}
 main .main__men, main .main__woman {
   display: flex;
   justify-content: center;
@@ -178,6 +288,9 @@ main .main__men, main .main__woman {
   background-color: #fdefef;
 }
 main .main__men h2, main .main__woman h2 {
+  animation: blurTitles linear;
+  animation-timeline: view();
+  animation-range: entry cover 30%;
   font-size: 3.3vw;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(90deg, rgba(249, 1, 111, 0.54) 0%, rgba(147, 8, 133, 0.619615) 41.83%, rgba(208, 56, 170, 0.754793) 70.19%, #851c87 100%);
   background-clip: text;
@@ -207,6 +320,8 @@ main .main__men--cards .card--default, main .main__woman--cards .card--default {
   background-color: #f9fafb;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 0.5vw;
+  transition: 0.5s;
+  cursor: pointer;
   width: 29%;
   margin-top: 7%;
   margin: 3% 2%;
@@ -234,6 +349,9 @@ main .main__men--cards .card--default p, main .main__woman--cards .card--default
   text-align: center;
   font-size: 1.2vw;
 }
+main .main__men--cards .card--default:hover, main .main__woman--cards .card--default:hover {
+  transform: scale(1.05);
+}
 main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
   margin-top: 9%;
   width: 40%;
@@ -250,12 +368,25 @@ main .main__men {
   background-color: #f8f9fa;
 }
 main .main__men h2 {
+  animation: blurTitles linear;
+  animation-timeline: view();
+  animation-range: entry cover 30%;
   font-size: 3.3vw;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), linear-gradient(90deg, #3373d2 16.04%, #6f95c7 33.14%, #7bb5f5 54.51%, #0074ee 68.5%, #5ea7ef 87.02%);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+main .main__men h2:hover {
+  animation: card-man 2s linear infinite;
+}
+main .main__woman h2 {
+  cursor: pointer;
+}
+main .main__woman h2:hover {
+  animation: card-woman 2s linear infinite;
 }
 main .main__alert {
   display: flex;
@@ -265,6 +396,9 @@ main .main__alert {
   padding-bottom: 5%;
 }
 main .main__alert h2 {
+  animation: blurTitles linear;
+  animation-timeline: view();
+  animation-range: entry cover 30%;
   font-size: 3.3vw;
   background-image: linear-gradient(to right, #1173d4, #33cc73);
   background-clip: text;
@@ -294,6 +428,11 @@ main .main__alert--cards .card--default--lightpink p {
   text-align: center;
   color: #ad346a;
 }
+main .main__alert--cards .card--default--lightpink:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 1vw 0px #ad346a;
+}
 main .main__alert--cards .card--default--lightblue__title {
   font-family: "Roboto", sans-serif;
   font-size: 1.4vw;
@@ -307,6 +446,11 @@ main .main__alert--cards .card--default--lightblue p {
   width: 100%;
   text-align: center;
   color: #2769a3;
+}
+main .main__alert--cards .card--default--lightblue:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 1vw 0px #2769a3;
 }
 main .main__alert--cards .card--default--lightgreen__title {
   font-family: "Roboto", sans-serif;
@@ -322,6 +466,11 @@ main .main__alert--cards .card--default--lightgreen p {
   text-align: center;
   color: #244a2d;
 }
+main .main__alert--cards .card--default--lightgreen:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 1vw 0px #244a2d;
+}
 main .main__alert--cards .card--default--lightyellow__title {
   font-family: "Roboto", sans-serif;
   font-size: 1.4vw;
@@ -335,6 +484,11 @@ main .main__alert--cards .card--default--lightyellow p {
   width: 100%;
   text-align: center;
   color: #976c00;
+}
+main .main__alert--cards .card--default--lightyellow:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 1vw 0px #976c00;
 }
 main .main__alert--cards .card--default--lightpink {
   width: 45%;
@@ -525,7 +679,7 @@ footer .footer__copy p {
   justify-content: space-between;
   align-items: center;
   width: 60%;
-  height: 85%;
+  height: auto;
   text-align: center;
   background-color: #fff;
   border-radius: 4vw;
@@ -558,10 +712,10 @@ footer .footer__copy p {
   font-size: 2vw;
   animation: ledGlow 4s infinite linear;
 }
-.login__content--description--form .login__content--description--subtitle {
-  font-size: 14px;
+.login__content--description--form--subtitle {
+  font-size: 1.3vw;
   opacity: 0.7;
-  margin-bottom: 20px;
+  margin-bottom: 4%;
 }
 .login__content--description--form form {
   width: 100%;
@@ -579,22 +733,53 @@ footer .footer__copy p {
 }
 .login__content--description--form form .input-wrapper {
   width: 100%;
-  position: relative;
 }
-.login__content--description--form form .input-wrapper input {
+.login__content--description--form form .input-wrapper input,
+.login__content--description--form form .input-wrapper .incorret {
   width: 100%;
-  padding: 14px 45px 14px 16px;
+  padding: 4% 2%;
   border: 1px solid #ccc;
   border-radius: 12px;
   font-size: 14px;
+  outline: none;
 }
-.login__content--description--form form .input-wrapper img {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  opacity: 0.7;
+.login__content--description--form form .input-wrapper .incorret {
+  border: solid #d56060 2px;
+}
+.login__content--description--form form .input-wrapper .incorret-Email,
+.login__content--description--form form .input-wrapper .incorret-Password {
+  text-align: start;
+  color: #d56060;
+  padding: 1% 0 0 2%;
+  font-size: 14px;
+  font-style: italic;
+}
+.login__content--description--form form .incorret-Send {
+  width: 100%;
+  text-align: start;
+  color: #d56060;
+  padding: 0% 0 0 2%;
+  font-size: 14px;
+  font-style: italic;
+}
+.login__content--description--form form .login__btn {
+  font-family: "Inter", sans-serif;
+  font-size: 1vw;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  background-color: #1173d4;
+  padding: 1.5% 4%;
+  color: #fff;
+  transition: 0.5s;
+  width: 100%;
+  padding: 3%;
+}
+.login__content--description--form form .login__btn:hover {
+  background-color: #347fca;
+  transform: translateY(-10%);
+  transition: 0.5s;
 }
 .login__content--description--options {
   display: flex;
@@ -621,42 +806,6 @@ footer .footer__copy p {
   border-radius: 3vw;
   width: 100%;
   height: 100%;
-}
-.login .login__btn {
-  width: 100%;
-  padding: 14px;
-  background-color: #1b57f3;
-  border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-.login .login__divider {
-  margin: 15px 0;
-  font-size: 14px;
-  opacity: 0.6;
-}
-.login .login__social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-}
-.login .login__social button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid #ddd;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.login .login__social button img {
-  width: 22px;
 }
 
 @media (max-width: 1124px) {
@@ -724,6 +873,8 @@ footer .footer__copy p {
     background-color: #f9fafb;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
     border-radius: 0.5vw;
+    transition: 0.5s;
+    cursor: pointer;
     width: 30%;
     margin-top: 7%;
     padding: 0 2% 6% 0%;
@@ -748,6 +899,9 @@ footer .footer__copy p {
     margin-bottom: 8%;
     text-align: center;
     font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default:hover, main .main__woman--cards .card--default:hover {
+    transform: scale(1.05);
   }
   main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
     margin-top: 9%;
@@ -829,6 +983,15 @@ footer .footer__copy p {
   }
   footer .footer__copy p {
     font-size: 1.5vw;
+  }
+  .login__content {
+    width: 85%;
+  }
+  .login__content--description--form--subtitle {
+    font-size: 1.8vw;
+  }
+  .login__content--description--form form .login__btn {
+    font-size: 1.6vw;
   }
 }
 @media (max-width: 850px) {
@@ -928,6 +1091,8 @@ footer .footer__copy p {
     background-color: #f9fafb;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
     border-radius: 0.5vw;
+    transition: 0.5s;
+    cursor: pointer;
     width: 46%;
     margin-top: 7%;
     padding: 0 2% 6% 0%;
@@ -952,6 +1117,9 @@ footer .footer__copy p {
     margin-bottom: 8%;
     text-align: center;
     font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default:hover, main .main__woman--cards .card--default:hover {
+    transform: scale(1.05);
   }
   main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
     margin-top: 9%;
@@ -1068,6 +1236,26 @@ footer .footer__copy p {
   }
   footer .footer__copy p {
     font-size: 1.8vw;
+  }
+  .login__content {
+    width: 95%;
+    height: 79%;
+  }
+  .login__content--description {
+    margin: 8%;
+    width: 50%;
+  }
+  .login__content--description--form h1 {
+    font-size: 2.5vw;
+  }
+  .login__content--description--form--subtitle {
+    font-size: 2.5vw;
+  }
+  .login__content--description--form form .login__btn {
+    font-size: 2vw;
+  }
+  .login__content--logo {
+    width: 35%;
   }
 }
 @media (max-width: 550px) {
@@ -1201,6 +1389,8 @@ footer .footer__copy p {
     background-color: #f9fafb;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
     border-radius: 0.5vw;
+    transition: 0.5s;
+    cursor: pointer;
     width: 70%;
     border-radius: 3vw;
     padding: 0 2% 15% 0%;
@@ -1223,6 +1413,9 @@ footer .footer__copy p {
     margin-bottom: 8%;
     text-align: center;
     font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default:hover, main .main__woman--cards .card--default:hover {
+    transform: scale(1.05);
   }
   main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
     margin-top: 9%;
@@ -1363,6 +1556,25 @@ footer .footer__copy p {
     width: 60%;
     font-size: 2.8vw;
   }
+  .login__content {
+    width: 95%;
+  }
+  .login__content--description {
+    margin: 5%;
+    width: 90%;
+  }
+  .login__content--description--form h1 {
+    font-size: 5vw;
+  }
+  .login__content--description--form form .login__btn {
+    font-size: 3vw;
+  }
+  .login__content--description--form--subtitle {
+    font-size: 3.5vw;
+  }
+  .login__content--logo {
+    display: none;
+  }
 }
 @media (max-width: 300px) {
   header {
@@ -1496,6 +1708,8 @@ footer .footer__copy p {
     background-color: #f9fafb;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2509803922);
     border-radius: 0.5vw;
+    transition: 0.5s;
+    cursor: pointer;
     width: 90%;
     border-radius: 3vw;
     padding: 0 2% 15% 0%;
@@ -1518,6 +1732,9 @@ footer .footer__copy p {
     margin-bottom: 8%;
     text-align: center;
     font-size: 1.2vw;
+  }
+  main .main__men--cards .card--default:hover, main .main__woman--cards .card--default:hover {
+    transform: scale(1.05);
   }
   main .main__men--cards .card--default img, main .main__woman--cards .card--default img {
     margin-top: 9%;
@@ -1680,5 +1897,45 @@ footer .footer__copy p {
   footer .footer__copy p {
     width: 60%;
     font-size: 4.8vw;
+  }
+  .login {
+    height: 100%;
+  }
+  .login__content {
+    width: 95%;
+    height: 100%;
+  }
+  .login__content--description {
+    width: 90%;
+  }
+  .login__content--description--form h1 {
+    font-size: 9vw;
+  }
+  .login__content--description--form form label {
+    font-size: 6vw;
+  }
+  .login__content--description--form form .input-wrapper input {
+    padding: 4%;
+    font-size: 5vw;
+  }
+  .login__content--description--form form .input-wrapper .incorret-Email {
+    padding: 4% 2%;
+    font-size: 5vw;
+  }
+  .login__content--description--form form .input-wrapper .incorret-Password {
+    padding: 4% 2%;
+    font-size: 5vw;
+  }
+  .login__content--description--form form .login__btn {
+    font-size: 6vw;
+  }
+  .login__content--description--form--subtitle {
+    font-size: 6vw;
+  }
+  .login__content--description--logo {
+    width: 30%;
+  }
+  .login__content--logo {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

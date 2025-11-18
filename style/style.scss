@@ -30,6 +30,7 @@ $color-card-testíc: #2769a3;
 $color-card-day: #244a2d;
 $color-card-mint: #976c00;
 
+$color-incorret-input: #d56060;
 
 @mixin flex-around {
   display: flex;
@@ -88,6 +89,7 @@ $color-card-mint: #976c00;
 }
 
 @mixin inter-title {
+  @include blur-title;
   font-size: $size-inter-title;
   background-image: linear-gradient(to right, #1173d4, #33cc73);
   background-clip: text;
@@ -96,6 +98,7 @@ $color-card-mint: #976c00;
   -webkit-text-fill-color: transparent;
 }
 @mixin inter-woman {
+  @include blur-title;
   font-size: $size-inter-title;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     linear-gradient(
@@ -112,6 +115,7 @@ $color-card-mint: #976c00;
   -webkit-text-fill-color: transparent;
 }
 @mixin inter-men {
+  @include blur-title;
   font-size: $size-inter-title;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     linear-gradient(
@@ -140,6 +144,13 @@ $color-card-mint: #976c00;
   background-color: #1173d4;
   padding: 1.5% 4%;
   color: #fff;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: #347fca;
+    transform: translateY(-10%);
+    transition: 0.5s;
+  }
 }
 @mixin btn-outline {
   @include btn-settings;
@@ -147,6 +158,13 @@ $color-card-mint: #976c00;
   padding: 1.5% 4%;
   color: #1173d4;
   background: transparent;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: #347fca0e;
+    transform: translateY(-10%);
+    transition: 0.5s;
+  }
 }
 
 @mixin cards-component {
@@ -168,6 +186,8 @@ $color-card-mint: #976c00;
   background-color: $bg-card;
   box-shadow: 0px 0px 10px 0px #00000040;
   border-radius: 0.5vw;
+  transition: 0.5s;
+  cursor: pointer;
 
   img {
     width: 23%;
@@ -185,6 +205,100 @@ $color-card-mint: #976c00;
     margin-bottom: 8%;
     text-align: center;
     font-size: 1.2vw;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin blur-title {
+  animation: blurTitles linear;
+  animation-timeline: view();
+  animation-range: entry cover 30%;
+}
+
+@keyframes StartTitle {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes seeNavigation {
+  0% {
+    transform: translateY(90%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(00%);
+    opacity: 1;
+  }
+}
+
+@keyframes seeBtn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes blurTitles {
+  0% {
+    filter: blur(50px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes card-man {
+  0% {
+    text-shadow: 0px 0px 0.5vw #0074ee;
+  }
+  22% {
+    text-shadow: 0px 0px 0.5vw #3400ee;
+  }
+  44% {
+    text-shadow: 0px 0px 0.5vw #00beee;
+  }
+  66% {
+    text-shadow: 0px 0px 0.5vw #001aff;
+  }
+  88% {
+    text-shadow: 0px 0px 0.5vw #2b02f4;
+  }
+  100% {
+    text-shadow: 0px 0px 0.5vw #0074ee;
+  }
+}
+@keyframes card-woman {
+  0% {
+    text-shadow: 0px 0px 0.5vw #de00ee;
+  }
+  22% {
+    text-shadow: 0px 0px 0.5vw #9f00ee;
+  }
+  44% {
+    text-shadow: 0px 0px 0.5vw #ee007b;
+  }
+  66% {
+    text-shadow: 0px 0px 0.5vw #ff0066;
+  }
+  88% {
+    text-shadow: 0px 0px 0.5vw #e402f4;
+  }
+  100% {
+    text-shadow: 0px 0px 0.5vw #ce00ee;
   }
 }
 
@@ -213,13 +327,21 @@ header {
       padding: 0.5% 1%;
       border-radius: 2vw;
       background: $bg-navigation;
+      animation: seeNavigation 1s ease-in-out forwards;
 
       &--box {
         margin-left: 3%;
         width: 12.4%;
+        transition: 0.8s;
 
         img {
           width: 100%;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.8s;
+          cursor: pointer;
         }
       }
 
@@ -253,12 +375,14 @@ header {
         h2 {
           @include inter-title;
           width: 47%;
+          animation: StartTitle 0.8s ease-in forwards;
         }
 
         p {
           @include inter-regular;
           width: 33%;
           margin: 2.5% 0 4% 0;
+          animation: StartTitle 1s ease-in forwards;
         }
       }
 
@@ -357,6 +481,18 @@ main {
 
       h2 {
         @include inter-men;
+        cursor: pointer;
+        &:hover {
+          animation: card-man 2s linear infinite;
+        }
+      }
+    }
+    &__woman {
+      h2 {
+        cursor: pointer;
+        &:hover {
+          animation: card-woman 2s linear infinite;
+        }
       }
     }
 
@@ -364,12 +500,10 @@ main {
       @include flex-center;
       flex-direction: column;
       padding-bottom: 5%;
+
       h2 {
         @include inter-title;
         margin: 2% 0 5% 0;
-      }
-
-      @mixin card-lightpink {
       }
 
       &--cards {
@@ -401,6 +535,12 @@ main {
               width: 100%;
               text-align: center;
               color: $color;
+            }
+
+            &:hover {
+              transition: 0.2s;
+              transform: scale(1.05);
+              box-shadow: 0px 0px 1vw 0px $color;
             }
           }
         }
@@ -544,16 +684,13 @@ footer {
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(to right, #02203d, #2776c4);
-  // background-color: #010c17;
 
   &__content {
     @include flex-between;
-    // flex-direction: column;
     width: 60%;
-    height: 85%;
-    // padding: 20px;
+    height: auto;
     text-align: center;
-    // background-color: #020423;
+
     background-color: #fff;
     border-radius: 4vw;
 
@@ -564,7 +701,6 @@ footer {
       margin-left: 10%;
       justify-content: flex-end;
       flex-direction: column;
-      // gap: 20px;
 
       &--logo {
         width: 20%;
@@ -582,10 +718,10 @@ footer {
           animation: ledGlow 4s infinite linear;
         }
 
-        .login__content--description--subtitle {
-          font-size: 14px;
+        &--subtitle {
+          font-size: 1.3vw;
           opacity: 0.7;
-          margin-bottom: 20px;
+          margin-bottom: 4%;
         }
 
         form {
@@ -603,24 +739,44 @@ footer {
 
           .input-wrapper {
             width: 100%;
-            position: relative;
 
-            input {
+            input,
+            .incorret {
               width: 100%;
-              padding: 14px 45px 14px 16px;
+              padding: 4% 2%;
               border: 1px solid #ccc;
               border-radius: 12px;
               font-size: 14px;
+              outline: none;
             }
 
-            img {
-              position: absolute;
-              right: 14px;
-              top: 50%;
-              transform: translateY(-50%);
-              width: 20px;
-              opacity: 0.7;
+            .incorret {
+              border: solid #d56060 2px;
             }
+
+            .incorret-Email,
+            .incorret-Password {
+              text-align: start;
+              color: #d56060;
+              padding: 1% 0 0 2%;
+              font-size: 14px;
+              font-style: italic;
+            }
+          }
+
+          .incorret-Send {
+            width: 100%;
+            text-align: start;
+            color: #d56060;
+            padding: 0% 0 0 2%;
+            font-size: 14px;
+            font-style: italic;
+          }
+
+          .login__btn {
+            @include btn-default;
+            width: 100%;
+            padding: 3%;
           }
         }
       }
@@ -647,49 +803,11 @@ footer {
       width: 50%;
       height: 100%;
       padding: 2%;
-      // overflow: hidden;
 
       img {
         border-radius: 3vw;
         width: 100%;
         height: 100%;
-      }
-    }
-  }
-
-  .login__btn {
-    width: 100%;
-    padding: 14px;
-    background-color: #1b57f3;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-
-  .login__divider {
-    margin: 15px 0;
-    font-size: 14px;
-    opacity: 0.6;
-  }
-
-  .login__social {
-    @include flex-center;
-    gap: 18px;
-
-    button {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid #ddd;
-      background: transparent;
-      @include flex-center;
-      cursor: pointer;
-
-      img {
-        width: 22px;
       }
     }
   }
@@ -833,7 +951,6 @@ footer {
       }
     }
   }
-
   footer {
     .footer {
       &__content {
@@ -896,10 +1013,27 @@ footer {
       }
     }
   }
+
+  .login {
+    &__content {
+      width: 85%;
+
+      &--description--form {
+        &--subtitle {
+          font-size: 1.8vw;
+        }
+
+        form {
+          .login__btn {
+            font-size: 1.6vw;
+          }
+        }
+      }
+    }
+  }
 }
 @media (max-width: 850px) {
   header {
-    // height: 80vh;
     background-position: 85% 110%;
 
     .header {
@@ -1145,6 +1279,35 @@ footer {
         p {
           font-size: 1.8vw;
         }
+      }
+    }
+  }
+
+  .login {
+    &__content {
+      width: 95%;
+      height: 79%;
+
+      &--description {
+        margin: 8%;
+        width: 50%;
+
+        &--form {
+          h1 {
+            font-size: 2.5vw;
+          }
+          &--subtitle {
+            font-size: 2.5vw;
+          }
+          form {
+            .login__btn {
+              font-size: 2vw;
+            }
+          }
+        }
+      }
+      &--logo {
+        width: 35%;
       }
     }
   }
@@ -1436,6 +1599,35 @@ footer {
           width: 60%;
           font-size: 2.8vw;
         }
+      }
+    }
+  }
+
+  .login {
+    &__content {
+      width: 95%;
+
+      &--description {
+        margin: 5%;
+        width: 90%;
+
+        &--form {
+          h1 {
+            font-size: 5vw;
+          }
+          form {
+            .login__btn {
+              font-size: 3vw;
+            }
+          }
+
+          &--subtitle {
+            font-size: 3.5vw;
+          }
+        }
+      }
+      &--logo {
+        display: none;
       }
     }
   }
@@ -1737,6 +1929,60 @@ footer {
           width: 60%;
           font-size: 4.8vw;
         }
+      }
+    }
+  }
+
+  .login {
+    height: 100%;
+
+    &__content {
+      width: 95%;
+      height: 100%;
+
+      &--description {
+        width: 90%;
+
+        &--form {
+          h1 {
+            font-size: 9vw;
+          }
+          form {
+            label {
+              font-size: 6vw;
+            }
+
+            .input-wrapper {
+              input {
+                padding: 4%;
+                font-size: 5vw;
+              }
+
+              .incorret-Email {
+                padding: 4% 2%;
+                font-size: 5vw;
+              }
+              .incorret-Password {
+                padding: 4% 2%;
+                font-size: 5vw;
+              }
+            }
+
+            .login__btn {
+              font-size: 6vw;
+            }
+          }
+          &--subtitle {
+            font-size: 6vw;
+          }
+        }
+
+        &--logo {
+          width: 30%;
+        }
+      }
+      &--logo {
+        display: none;
       }
     }
   }
