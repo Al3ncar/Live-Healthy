@@ -6,7 +6,9 @@
 
 O LiveHealthy é um site informativo sobre saúde preventiva, desenvolvido para auxiliar pessoas a manterem uma rotina de exames e cuidados com a saúde. O projeto apresenta recomendações de exames preventivos por faixa etária, separados por gênero, além de alertas importantes sobre autocuidado.
 
-## 🖼️ Desgin do Projeto
+## 🖼️ Desgin
+
+### 🏠 Home
 
 | Desktop                                                       | Tablet                                                      |
 | ------------------------------------------------------------- | ----------------------------------------------------------- |
@@ -15,6 +17,12 @@ O LiveHealthy é um site informativo sobre saúde preventiva, desenvolvido para 
 | Mobile                                                                    | SmartWatch                                                          |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | <img width="200px" src="./assets/picture/readme/mobile.png" alt="Mobile"> | <img src="./assets/picture/readme/smartwatch.png" alt="SmartWatch"> |
+
+### 🖌️ Login
+
+| Desktop                                                             | Tablet                                                            |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| <img src="./assets/picture/readme/dasktop-login.png" alt="Desktop"> | <img src="./assets/picture/readme/tablet-login.png" alt="Tablet"> |
 
 ## 🎯 Funcionalidades
 
