@@ -7,8 +7,9 @@
 O LiveHealthy é um site informativo sobre saúde preventiva, desenvolvido para auxiliar pessoas a manterem uma rotina de exames e cuidados com a saúde. O projeto apresenta recomendações de exames preventivos por faixa etária, separados por gênero, além de alertas importantes sobre autocuidado.
 
 Email e senha para poder seguir para tela de home do projeto:
-- Email: admin.vivabem@gmail.com
-- Senha: adm1n__@123
+
+- | Email: admin.vivabem@gmail.com |
+- | Senha: adm1n__@123 
 
 ## 🖼️ Desgin
 
